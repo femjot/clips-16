@@ -7,7 +7,9 @@ import { ModalService } from '../../services/modal.service';
   styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent {
-  constructor(public modal: ModalService) {
-    console.log(modal.visible);
+  constructor(public modal: ModalService) {}
+
+  public closeModal() {
+    this.modal.toggleModal();
   }
 }
