@@ -26,5 +26,8 @@ export class TabsContainerComponent implements AfterContentInit {
       tab.active = false;
     });
     tab.active = true;
+
+    //prevent default behavior when no $event object exists here
+    return false;
   }
 }
