@@ -18,6 +18,13 @@ export class TabsContainerComponent implements AfterContentInit {
   //@ContentChildren(TabComponent) tabs?: QueryList<TabComponent>;
 
   ngAfterContentInit(): void {
-    console.log(this.tabs);
+    this.tabs!.first.active = true;
+  }
+
+  selectTab(tab: TabComponent) {
+    this.tabs.forEach((tab) => {
+      tab.active = false;
+    });
+    tab.active = true;
   }
 }
